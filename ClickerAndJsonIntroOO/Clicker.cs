@@ -2,9 +2,13 @@
 {
     internal class Clicker
     {
-        private int _points;
-        private int _upgrades;
-        private char _letter;
+        public int _points;
+        public int _upgrades;
+        public char _letter;
+
+        public Clicker()
+        {
+        }
 
         public Clicker(char letter)
         {
