@@ -2,8 +2,28 @@
 {
     internal class Clicker
     {
-        int _points = 0;
-        int _upgrades = 1;
+        private int _points;
+        private int _upgrades;
+        private char _letter;
+
+        public Clicker(char letter)
+        {
+            _points = 0;
+            _upgrades = 1;
+            _letter = letter;
+        }
+
+        public void HandleLetter(char letter)
+        {
+            if (letter == _letter)
+            {
+                Click();
+            }
+            else if (letter == char.ToUpper(_letter))
+            {
+                BuyUpgrade();
+            }
+        }
 
         public void Click()
         {
@@ -21,7 +41,9 @@
 
         public void Show()
         {
-            Console.WriteLine($"Klikker A: Du har {_points} poeng. (a=klikk, A=upgrade)");
+            var upperLetter = char.ToUpper(_letter);
+            var text = $"Klikker {upperLetter}: Du har {_points} poeng. ({_letter}=klikk, {upperLetter}=upgrade)";
+            Console.WriteLine(text);
         }
     }
 }

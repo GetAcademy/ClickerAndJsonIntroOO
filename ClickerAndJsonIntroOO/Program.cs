@@ -4,20 +4,25 @@
     {
         static void Main(string[] args)
         {
-            var clicker = new Clicker();
+            var clickers = new Clicker[]
+            {
+                new Clicker('a'),
+                new Clicker('b'),
+                new Clicker('c'),
+                new Clicker('d'),
+            };
             while (true)
             {
                 Console.Clear();
-                clicker.Show();
+                foreach (var clicker in clickers)
+                {
+                    clicker.Show();
+                }
 
                 var cmdKey = Console.ReadKey(true);
-                if (cmdKey.KeyChar == 'a')
+                foreach (var clicker in clickers)
                 {
-                    clicker.Click();
-                }
-                else if (cmdKey.KeyChar == 'A')
-                {
-                    clicker.BuyUpgrade();
+                    clicker.HandleLetter(cmdKey.KeyChar);
                 }
             }
         }
