@@ -4,27 +4,23 @@
     {
         static void Main(string[] args)
         {
-            var points = 0;
-            var upgrades = 1;
+            var clicker = new Clicker();
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine($"Klikker A: Du har {points} poeng. (a=klikk, A=upgrade)");
+                clicker.Show();
 
                 var cmdKey = Console.ReadKey(true);
                 if (cmdKey.KeyChar == 'a')
                 {
-                    points += upgrades;
+                    clicker.Click();
                 }
                 else if (cmdKey.KeyChar == 'A')
                 {
-                    if (points >= 10)
-                    {
-                        upgrades++;
-                        points -= 10;
-                    }
+                    clicker.BuyUpgrade();
                 }
             }
         }
+
     }
 }

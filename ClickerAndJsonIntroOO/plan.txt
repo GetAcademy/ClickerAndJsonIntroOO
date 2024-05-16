@@ -1,0 +1,9 @@
+(litt repetisjon om hvordan lage objekter i C# omtrent som vi gjorde i JavaScript)
+(metoder inn i klasser + constructor)
+clicker med bestemt bokstav
+uten klasse
+med klasse
+mange objekter
+ev. om static vs ikke-static
+lese og skrive JSON - save og load clicker
+verdityper vs referansetyper
